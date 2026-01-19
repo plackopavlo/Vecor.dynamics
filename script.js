@@ -28,6 +28,8 @@ const content = {
     contactEmailLabelFooter: "Email:",
     contactTelCzLabelFooter: "Тел CZ:",
     contactTelDeLabelFooter: "Тел DE:",
+    contactTelLtLabel: "Тел LT:",
+    contactTelLtLabelFooter: "Тел LT:",
 
     /* MAIN SITE */
     heroTitle: "Технические, энергетические и инфраструктурные услуги в ЕС",
@@ -105,6 +107,8 @@ const content = {
     contactEmailLabelFooter: "Email:",
     contactTelCzLabelFooter: "Tel CZ:",
     contactTelDeLabelFooter: "Tel DE:",
+    contactTelLtLabel: "Tel LT:",
+contactTelLtLabelFooter: "Tel LT:",
 
     heroTitle: "Technical, Energy and Infrastructure Services in the EU",
     heroText:
@@ -180,6 +184,8 @@ const content = {
     contactEmailLabelFooter: "Email:",
     contactTelCzLabelFooter: "Тел CZ:",
     contactTelDeLabelFooter: "Тел DE:",
+    contactTelLtLabel: "Тел LT:",
+contactTelLtLabelFooter: "Тел LT:",
 
     heroTitle: "Технічні, енергетичні та інфраструктурні послуги в ЄС",
     heroText:
@@ -255,6 +261,8 @@ const content = {
     contactEmailLabelFooter: "Email:",
     contactTelCzLabelFooter: "Tel CZ:",
     contactTelDeLabelFooter: "Tel DE:",
+    contactTelLtLabel: "Tel LT:",
+contactTelLtLabelFooter: "Tel LT:",
 
     heroTitle: "Technické, energetické a infrastrukturní služby v EU",
     heroText:
@@ -330,6 +338,8 @@ const content = {
     contactEmailLabelFooter: "E-Mail:",
     contactTelCzLabelFooter: "Tel CZ:",
     contactTelDeLabelFooter: "Tel DE:",
+    contactTelLtLabel: "Tel LT:",
+contactTelLtLabelFooter: "Tel LT:",
 
     heroTitle: "Technische, Energie- und Infrastrukturleistungen in der EU",
     heroText:
@@ -441,6 +451,8 @@ function setLang(lang) {
   const d = content[lang] || content.ru;
 
   // NAV
+  safe("contactTelLtLabel", d.contactTelLtLabel);
+safe("contactTelLtLabelFooter", d.contactTelLtLabelFooter);
   safe("companyTopBtn", d.companyTopBtn);
   safe("companyLinkFooter", d.companyLinkFooter);
   safe("portfolioTopBtn", d.portfolioTopBtn);
