@@ -154,13 +154,37 @@ footer a:hover{opacity:.85}
 /* MOBILE */
 @media(max-width:1020px){ .gallery{grid-template-columns:repeat(3,1fr)} }
 @media(max-width:760px){
-  header{padding:14px 18px}
-  .section{padding:0 18px}
-  .hero{padding:34px 20px}
-  .hero h2{font-size:30px}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .photo img{height:180px}
-  footer{padding:56px 22px}
+  header{
+    padding:14px 16px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+  }
+  .nav .top-btn{
+    padding:9px 12px;
+    border-radius:14px;
+    font-size:12px;
+    white-space:nowrap;
+  }
+  .langs{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  .langs button{
+    margin-left:0;
+    padding:8px 10px;
+    border-radius:12px;
+    font-size:12px;
+  }
 }
 @media(max-width:420px){
   .gallery{grid-template-columns:1fr}
@@ -255,3 +279,4 @@ footer a:hover{opacity:.85}
 </script>
 </body>
 </html>
+
