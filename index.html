@@ -21,16 +21,50 @@ header{
   z-index:10;
   background:linear-gradient(90deg,#020617,#0b1220);
   color:#fff;
-  padding:22px 64px;
+  padding:18px 64px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:18px;
   box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+header .brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 header h1{
   font-size:18px;
   letter-spacing:2px;
 }
+
+.nav{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.top-btn{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  padding:7px 12px;
+  border-radius:12px;
+  font-size:12px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.top-btn:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.12);
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+.top-btn:active{
+  transform:translateY(0) scale(.98);
+}
+
 .langs button{
   background:rgba(255,255,255,.92);
   color:#020617;
@@ -66,14 +100,6 @@ header h1{
   box-shadow:0 40px 120px rgba(0,0,0,.25);
   position:relative;
   overflow:hidden;
-}
-.hero-card:after{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:linear-gradient(90deg, rgba(59,130,246,.18), rgba(255,255,255,0));
-  opacity:.7;
-  pointer-events:none;
 }
 .hero-card h2{
   font-size:46px;
@@ -153,23 +179,6 @@ li{margin-bottom:10px;opacity:.96}
 .stage h4{margin-bottom:10px;font-size:16px}
 .stage p{opacity:.9}
 
-/* CONTACTS (BOTTOM) */
-.contact-bar{
-  border-top:1px solid rgba(255,255,255,.08);
-  margin-top:42px;
-  padding-top:28px;
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-  font-size:14px;
-  opacity:.95;
-}
-.contact-bar a{
-  color:#93c5fd;
-  text-decoration:none;
-}
-.contact-bar a:hover{opacity:.85}
-
 /* FOOTER */
 footer{
   background:#020617;
@@ -185,17 +194,25 @@ footer a{
 }
 footer a:hover{opacity:.85}
 
+.contact-bar{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:26px;
+  padding-top:22px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:14px;
+}
+.contact-bar a{color:#93c5fd;text-decoration:none}
+.contact-bar a:hover{opacity:.85}
+
 /* ================= ANIMATION SYSTEM ================= */
 .reveal{
   opacity:0;
   transform:translateY(18px);
   transition:opacity .85s ease, transform .85s ease;
-  will-change:opacity, transform;
 }
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal.show{opacity:1;transform:translateY(0)}
 .stagger > *{
   opacity:0;
   transform:translateY(14px);
@@ -215,11 +232,17 @@ footer a:hover{opacity:.85}
 .stagger.show > *:nth-child(8){transition-delay:.48s}
 
 @media(max-width:900px){
-  header{padding:18px 22px}
+  header{padding:16px 22px}
   .section,.hero{padding:0 22px}
   .grid{grid-template-columns:1fr}
   .hero-card{padding:56px 24px}
   .hero-card h2{font-size:36px}
+  @media(max-width:520px){
+  .hero-card h2{font-size:30px}
+  .section-title{font-size:28px}
+  footer{padding:56px 22px}
+}
+
 }
 </style>
 </head>
@@ -227,12 +250,19 @@ footer a:hover{opacity:.85}
 <body>
 
 <header>
-  <h1>VECTOR DYNAMICS</h1>
-  <div class="langs">
-    <button onclick="setLang('ru')">RU</button>
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ua')">UA</button>
-    <button onclick="setLang('cz')">CZ</button>
+  <div class="brand">
+    <h1>VECTOR DYNAMICS</h1>
+  </div>
+
+  <div class="nav">
+    <a class="top-btn" href="company.html" id="companyTopBtn">Company data</a>
+
+    <div class="langs">
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ua')">UA</button>
+      <button onclick="setLang('cz')">CZ</button>
+    </div>
   </div>
 </header>
 
@@ -276,21 +306,25 @@ footer a:hover{opacity:.85}
   </div>
 </section>
 
-<!-- CONTACTS (BOTTOM) -->
+<!-- FOOTER -->
 <footer class="reveal">
   <p>© Vector Dynamics s.r.o.</p>
 
   <div class="contact-bar">
     <div><strong>Email:</strong> <a href="mailto:vect.dynamics@gmail.com">vect.dynamics@gmail.com</a></div>
-    <div><strong>Tel:</strong> <a href="tel:+420606220094">+420 606 22 00 94</a></div>
+    <div><strong>Tel CZ:</strong> <a href="tel:+420606220094">+420 606 22 00 94</a></div>
+    <div><strong>Tel DE:</strong> <a href="tel:+491621550977">+49 162 1550977</a></div>
+    <div><strong>Tel DE:</strong> <a href="tel:+491741737759">+49 174 1737759</a></div>
   </div>
 
   <div style="margin-top:18px">
     <a href="privacy.html">Privacy Policy</a>
     <a href="impressum.html">Impressum</a>
+    <a href="company.html" id="companyLinkFooter">Company data</a>
   </div>
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+
