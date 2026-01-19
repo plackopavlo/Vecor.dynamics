@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Company Data | Vector Dynamics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+  background:#f6f7f9;
+  color:#0b1220;
+  line-height:1.65;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:linear-gradient(90deg,#020617,#0b1220);
+  color:#fff;
+  padding:22px 64px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+header a{
+  color:#93c5fd;
+  text-decoration:none;
+  font-size:13px;
+  opacity:.95;
+}
+header a:hover{opacity:.85}
+header h1{
+  font-size:18px;
+  letter-spacing:2px;
+  margin:0;
+}
+.langs button{
+  background:rgba(255,255,255,.92);
+  color:#020617;
+  border:none;
+  padding:7px 12px;
+  margin-left:6px;
+  border-radius:10px;
+  font-size:12px;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.langs button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+.langs button:active{
+  transform:translateY(0px) scale(.98);
+}
+
+/* MAIN */
+.section{
+  max-width:1100px;
+  margin:90px auto;
+  padding:0 48px;
+}
+.card{
+  background:#fff;
+  border-radius:22px;
+  padding:46px 44px;
+  box-shadow:0 40px 120px rgba(0,0,0,.12);
+}
+.title{
+  font-size:40px;
+  letter-spacing:-.02em;
+}
+.sub{
+  margin-top:12px;
+  opacity:.82;
+  font-size:15px;
+  max-width:850px;
+}
+
+.grid{
+  margin-top:36px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.block{
+  background:linear-gradient(180deg,#ffffff 0%, #f3f4f6 100%);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:18px;
+  padding:22px 20px;
+}
+.block h3{
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.7;
+  margin-bottom:12px;
+}
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(15,23,42,.08);
+  font-size:14px;
+}
+.row:last-child{border-bottom:none}
+.k{opacity:.7}
+.v{font-weight:600}
+
+.list{
+  margin-top:14px;
+  padding-left:18px;
+  font-size:14px;
+}
+.list li{margin:7px 0}
+
+/* CONTACT CARD */
+.contact-card{
+  margin-top:26px;
+  background:#0b1220;
+  color:#fff;
+  border-radius:18px;
+  padding:22px 20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+}
+.contact-card h3{
+  font-size:14px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  opacity:.9;
+  margin-bottom:12px;
+}
+.contact-items{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 18px;
+  font-size:14px;
+}
+.contact-items a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+.contact-items a:hover{opacity:.85}
+
+/* FOOTER */
+footer{
+  background:#020617;
+  color:#d1d5db;
+  padding:80px 64px;
+  margin-top:120px;
+}
+footer a{
+  color:#93c5fd;
+  text-decoration:none;
+  margin-right:16px;
+  font-size:14px;
+}
+footer a:hover{opacity:.85}
+.contact-bar{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:26px;
+  padding-top:22px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  font-size:14px;
+}
+.contact-bar a{color:#93c5fd;text-decoration:none}
+.contact-bar a:hover{opacity:.85}
+
+/* ANIM */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .85s ease, transform .85s ease;
+}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:520px){
+  .hero-card h2{font-size:30px}
+  .section-title{font-size:28px}
+  footer{padding:56px 22px}
+}
+
+
+@media(max-width:900px){
+  header{padding:18px 22px}
+  .section{padding:0 22px}
+  .grid{grid-template-columns:1fr}
+  .card{padding:34px 22px}
+  .title{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>VECTOR DYNAMICS</h1>
+    <div style="margin-top:6px">
+      <a href="index.html" id="backToSite">← Back to website</a>
+    </div>
+  </div>
+
+  <div class="langs">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ua')">UA</button>
+    <button onclick="setLang('cz')">CZ</button>
+  </div>
+</header>
+
+<main class="section reveal">
+  <div class="card">
+    <h2 class="title" id="companyPageTitle"></h2>
+    <p class="sub" id="companyPageSub"></p>
+
+    <div class="grid">
+
+      <div class="block">
+        <h3 id="companyBlock1"></h3>
+        <div class="row"><div class="k" id="c_name_k"></div><div class="v" id="c_name_v"></div></div>
+        <div class="row"><div class="k" id="c_address_k"></div><div class="v" id="c_address_v"></div></div>
+        <div class="row"><div class="k" id="c_ico_k"></div><div class="v" id="c_ico_v"></div></div>
+        <div class="row"><div class="k" id="c_legal_k"></div><div class="v" id="c_legal_v"></div></div>
+        <div class="row"><div class="k" id="c_date_k"></div><div class="v" id="c_date_v"></div></div>
+        <div class="row"><div class="k" id="c_file_k"></div><div class="v" id="c_file_v"></div></div>
+      </div>
+
+      <div class="block">
+        <h3 id="companyBlock2"></h3>
+        <div class="row"><div class="k" id="c_court_k"></div><div class="v" id="c_court_v"></div></div>
+        <div class="row"><div class="k" id="c_section_k"></div><div class="v" id="c_section_v"></div></div>
+        <div class="row"><div class="k" id="c_capital_k"></div><div class="v" id="c_capital_v"></div></div>
+        <div class="row"><div class="k" id="c_directors_k"></div><div class="v" id="c_directors_v"></div></div>
+        <div class="row"><div class="k" id="c_action_k"></div><div class="v" id="c_action_v"></div></div>
+      </div>
+
+      <div class="block" style="grid-column:1/-1">
+        <h3 id="companyBlock3"></h3>
+        <ul class="list" id="companyActivities"></ul>
+      </div>
+
+    </div>
+
+    <!-- Contacts block on company page -->
+    <div class="contact-card">
+      <h3 id="companyContactsTitle">Contacts</h3>
+      <div class="contact-items">
+        <div><strong id="contactEmailLabel">Email:</strong> <a href="mailto:vect.dynamics@gmail.com">vect.dynamics@gmail.com</a></div>
+        <div><strong id="contactTelCzLabel">Tel CZ:</strong> <a href="tel:+420606220094">+420 606 22 00 94</a></div>
+        <div><strong id="contactTelDeLabel1">Tel DE:</strong> <a href="tel:+491621550977">+49 162 1550977</a></div>
+        <div><strong id="contactTelDeLabel2">Tel DE:</strong> <a href="tel:+491741737759">+49 174 1737759</a></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="reveal">
+  <p>© Vector Dynamics s.r.o.</p>
+
+  <div class="contact-bar">
+    <div><strong id="contactEmailLabelFooter">Email:</strong> <a href="mailto:vect.dynamics@gmail.com">vect.dynamics@gmail.com</a></div>
+    <div><strong id="contactTelCzLabelFooter">Tel CZ:</strong> <a href="tel:+420606220094">+420 606 22 00 94</a></div>
+    <div><strong id="contactTelDeLabelFooter1">Tel DE:</strong> <a href="tel:+491621550977">+49 162 1550977</a></div>
+    <div><strong id="contactTelDeLabelFooter2">Tel DE:</strong> <a href="tel:+491741737759">+49 174 1737759</a></div>
+  </div>
+
+  <div style="margin-top:18px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="company.html" id="companyLinkFooter">Company data</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
