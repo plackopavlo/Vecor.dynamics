@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio | Vector Dynamics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:#f6f7f9;color:#0b1220;line-height:1.6}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:linear-gradient(90deg,#020617,#0b1220);
+  color:#fff;
+  padding:16px 64px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+header h1{font-size:18px;letter-spacing:2px}
+.nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.top-btn{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  padding:7px 12px;
+  border-radius:12px;
+  font-size:12px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.top-btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.langs button{
+  background:rgba(255,255,255,.92);
+  color:#020617;
+  border:none;
+  padding:7px 12px;
+  margin-left:6px;
+  border-radius:10px;
+  font-size:12px;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.langs button:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.25)}
+.langs button:active{transform:translateY(0px) scale(.98)}
+
+.section{max-width:1200px;margin:70px auto;padding:0 48px}
+.hero{
+  background:linear-gradient(135deg,#020617 0%,#0b1220 60%,#0f172a 100%);
+  color:#fff;
+  border-radius:26px;
+  padding:46px 36px;
+  box-shadow:0 40px 120px rgba(0,0,0,.25);
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:radial-gradient(circle at 25% 20%, rgba(59,130,246,.24), transparent 55%);
+  pointer-events:none;
+}
+.hero h2{font-size:38px;letter-spacing:-.02em}
+.hero p{margin-top:14px;opacity:.9;max-width:800px}
+
+.tabs{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.tab{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.16);
+  padding:10px 14px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:13px;
+  transition:transform .2s ease, background .2s ease;
+}
+.tab:hover{transform:translateY(-1px);background:rgba(255,255,255,.12)}
+.tab.active{background:rgba(255,255,255,.18)}
+
+.gallery{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.photo{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:#0b1220;
+  box-shadow:0 24px 60px rgba(0,0,0,.18);
+  cursor:pointer;
+  transform:translateY(0);
+  transition:transform .25s ease;
+}
+.photo:hover{transform:translateY(-3px)}
+.photo img{width:100%;height:220px;object-fit:cover;display:block;opacity:.98}
+.badge{
+  position:absolute;left:12px;top:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:11px;
+  color:#fff;
+  background:rgba(2,6,23,.65);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox{
+  position:fixed;inset:0;
+  background:rgba(2,6,23,.86);
+  display:none;
+  place-items:center;
+  z-index:50;
+  padding:22px;
+}
+.lightbox.show{display:grid}
+.lightbox img{
+  max-width:min(1100px,96vw);
+  max-height:86vh;
+  border-radius:18px;
+  box-shadow:0 40px 120px rgba(0,0,0,.45);
+}
+.close{
+  position:fixed;right:18px;top:18px;
+  border:none;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-size:18px;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+footer{
+  background:#020617;
+  color:#d1d5db;
+  padding:80px 64px;
+  margin-top:110px;
+}
+footer a{color:#93c5fd;text-decoration:none;margin-right:16px;font-size:14px}
+footer a:hover{opacity:.85}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .85s ease, transform .85s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:1020px){ .gallery{grid-template-columns:repeat(3,1fr)} }
+@media(max-width:760px){
+  header{padding:14px 18px}
+  .section{padding:0 18px}
+  .hero{padding:34px 20px}
+  .hero h2{font-size:30px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .photo img{height:180px}
+  footer{padding:56px 22px}
+}
+@media(max-width:420px){
+  .gallery{grid-template-columns:1fr}
+  .photo img{height:220px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>VECTOR DYNAMICS</h1>
+  <div class="nav">
+    <a class="top-btn" href="index.html" id="backToSite">← Back to website</a>
+    <a class="top-btn" href="company.html" id="companyTopBtn">Company data</a>
+    <div class="langs">
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ua')">UA</button>
+      <button onclick="setLang('cz')">CZ</button>
+      <button onclick="setLang('de')">DE</button>
+    </div>
+  </div>
+</header>
+
+<main class="section reveal">
+  <div class="hero">
+    <h2 id="portfolioTitle">Portfolio</h2>
+    <p id="portfolioSub">Real project photos from the field. Select a category below.</p>
+    <div class="tabs">
+      <button class="tab active" id="tabSolar" data-cat="solar">Solar Installation</button>
+      <button class="tab" id="tabFiber" data-cat="fiber">Fiber & Earthworks</button>
+    </div>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" id="closeLb">✕</button>
+  <img id="lbImg" alt="">
+</div>
+
+<footer class="reveal">
+  <p>© Vector Dynamics s.r.o.</p>
+  <div style="margin-top:16px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="company.html" id="companyLinkFooter">Company data</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const solar = Array.from({length:12}, (_,i)=>`img/solar-${String(i+1).padStart(2,'0')}.jpeg`);
+  const fiber = Array.from({length:12}, (_,i)=>`img/fiber-${String(i+1).padStart(2,'0')}.jpeg`);
+
+  const gallery = document.getElementById('gallery');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const closeLb = document.getElementById('closeLb');
+
+  function render(cat){
+    const list = cat==='fiber'?fiber:solar;
+    gallery.innerHTML = list.map((src,idx)=>`
+      <div class="photo" data-src="${src}">
+        <span class="badge">${cat.toUpperCase()} • ${idx+1}</span>
+        <img src="${src}" alt="${cat} photo ${idx+1}" loading="lazy">
+      </div>
+    `).join('');
+  }
+
+  document.querySelectorAll('.tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.cat);
+    })
+  })
+
+  gallery.addEventListener('click',(e)=>{
+    const card = e.target.closest('.photo');
+    if(!card) return;
+    lbImg.src = card.dataset.src;
+    lightbox.classList.add('show');
+  })
+
+  closeLb.addEventListener('click',()=>lightbox.classList.remove('show'));
+  lightbox.addEventListener('click',(e)=>{ if(e.target===lightbox) lightbox.classList.remove('show'); });
+
+  render('solar');
+</script>
+</body>
+</html>
