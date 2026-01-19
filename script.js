@@ -1,7 +1,8 @@
+
 /* ======================================================
    Vector Dynamics - Universal script
-   - Multilanguage: RU/EN/UA/CZ
-   - Works for: index.html / test.html / company.html
+   - Multilanguage: RU/EN/UA/CZ/DE
+   - Works for: index.html / test.html / company.html / portfolio.html
    - Animations: reveal + stagger
 ====================================================== */
 
@@ -10,7 +11,14 @@ const content = {
     /* NAV / BUTTONS */
     companyTopBtn: "Данные компании",
     companyLinkFooter: "Данные компании",
+    portfolioTopBtn: "Портфолио",
     backToSite: "← Назад на сайт",
+
+    /* PORTFOLIO PAGE */
+    portfolioTitle: "Портфолио",
+    portfolioSub: "Реальные фото выполненных работ. Выберите категорию ниже.",
+    tabSolar: "Солнечные панели",
+    tabFiber: "Оптоволокно и земляные работы",
 
     /* CONTACT LABELS */
     companyContactsTitle: "Контакты",
@@ -82,7 +90,13 @@ const content = {
   en: {
     companyTopBtn: "Company data",
     companyLinkFooter: "Company data",
+    portfolioTopBtn: "Portfolio",
     backToSite: "← Back to website",
+
+    portfolioTitle: "Portfolio",
+    portfolioSub: "Real project photos from the field. Select a category below.",
+    tabSolar: "Solar Installation",
+    tabFiber: "Fiber & Earthworks",
 
     companyContactsTitle: "Contacts",
     contactEmailLabel: "Email:",
@@ -151,7 +165,13 @@ const content = {
   ua: {
     companyTopBtn: "Дані компанії",
     companyLinkFooter: "Дані компанії",
+    portfolioTopBtn: "Портфоліо",
     backToSite: "← Назад на сайт",
+
+    portfolioTitle: "Портфоліо",
+    portfolioSub: "Реальні фото виконаних робіт. Оберіть категорію нижче.",
+    tabSolar: "Сонячні панелі",
+    tabFiber: "Оптоволокно та земляні роботи",
 
     companyContactsTitle: "Контакти",
     contactEmailLabel: "Email:",
@@ -220,7 +240,13 @@ const content = {
   cz: {
     companyTopBtn: "Údaje o společnosti",
     companyLinkFooter: "Údaje o společnosti",
+    portfolioTopBtn: "Portfolio",
     backToSite: "← Zpět na web",
+
+    portfolioTitle: "Portfolio",
+    portfolioSub: "Reálné fotografie z projektů. Vyberte kategorii níže.",
+    tabSolar: "Solární montáž",
+    tabFiber: "Optika & zemní práce",
 
     companyContactsTitle: "Kontakt",
     contactEmailLabel: "Email:",
@@ -284,12 +310,85 @@ const content = {
     c_capital_k: "Základní kapitál",
     c_directors_k: "Statutární orgán",
     c_action_k: "Způsob jednání"
+  },
+
+  de: {
+    companyTopBtn: "Firmendaten",
+    companyLinkFooter: "Firmendaten",
+    portfolioTopBtn: "Portfolio",
+    backToSite: "← Zurück zur Website",
+
+    portfolioTitle: "Portfolio",
+    portfolioSub: "Reale Projektfotos von der Baustelle. Bitte wählen Sie unten eine Kategorie.",
+    tabSolar: "Solar-Montage",
+    tabFiber: "Glasfaser & Tiefbau",
+
+    companyContactsTitle: "Kontakt",
+    contactEmailLabel: "E-Mail:",
+    contactTelCzLabel: "Tel CZ:",
+    contactTelDeLabel: "Tel DE:",
+    contactEmailLabelFooter: "E-Mail:",
+    contactTelCzLabelFooter: "Tel CZ:",
+    contactTelDeLabelFooter: "Tel DE:",
+
+    heroTitle: "Technische, Energie- und Infrastrukturleistungen in der EU",
+    heroText:
+      "Vector Dynamics s.r.o. ist ein technisches Montageunternehmen, das sich auf die praktische Umsetzung von Energie- und Infrastrukturprojekten innerhalb der Europäischen Union spezialisiert.",
+
+    solarTitle: "Montage von Solarkraftwerken",
+    solarText:
+      "Wir führen mechanische Montagearbeiten für Freiflächen- und gewerbliche Solaranlagen im Rahmen von EPC-Projekten durch.",
+    solarList: [
+      "Montage von Stahl-/Alu-Unterkonstruktionen (ground-mounted / rooftop)",
+      "Aufbau, Ausrichtung und Befestigung gemäß Montageplänen",
+      "Mechanische Installation von PV-Modulen und Befestigungssystemen",
+      "Vorbereitung der Montage-Reihen und Arbeitsbereiche",
+      "Koordination mit EPC und Nachunternehmern vor Ort",
+      "Qualitätskontrolle und Einhaltung der Sicherheitsstandards"
+    ],
+
+    stagesTitle: "Ablauf der Ausführung",
+    stages: [
+      ["Vorbereitung", "Dokumentenprüfung, Sicherheitsunterweisung, Baustelleneinrichtung und Logistik."],
+      ["Konstruktion", "Montage der Tragkonstruktion: Positionierung, Nivellierung und Befestigung."],
+      ["Module", "Mechanische PV-Montage: Platzierung, Ausrichtung und Endbefestigung."],
+      ["Kontrolle", "Laufende Qualitätsprüfung, HSE-Überwachung, Reporting und Koordination."]
+    ],
+
+    fiberTitle: "Glasfaser-Infrastruktur",
+    fiberText:
+      "Wir führen Erdarbeiten und Installationsarbeiten für Glasfasertrassen im Rahmen von Telekommunikations- und Infrastrukturprojekten durch.",
+    fiberList: [
+      "Aushub/Trenching (maschinell und manuell)",
+      "Vorbereitung der Trasse und Organisation der Arbeitsbereiche",
+      "Einbau von Schutzrohren, Durchführungen und Querungen",
+      "Verfüllung, Verdichtung und Wiederherstellung der Oberfläche",
+      "Koordination mit Bauleitung und Aufsicht"
+    ],
+
+    companyPageTitle: "Firmendaten",
+    companyPageSub:
+      "Offizielle Unternehmensdaten gemäß Auszug aus dem Handelsregister (Tschechische Republik).",
+    companyBlock1: "Grunddaten",
+    companyBlock2: "Register & Geschäftsführung",
+    companyBlock3: "Gegenstand der Tätigkeit",
+
+    c_name_k: "Firma",
+    c_address_k: "Sitz",
+    c_ico_k: "IČO",
+    c_legal_k: "Rechtsform",
+    c_date_k: "Gründungsdatum",
+    c_file_k: "Aktenzeichen",
+
+    c_court_k: "Registergericht",
+    c_section_k: "Abteilung / Eintrag",
+    c_capital_k: "Stammkapital",
+    c_directors_k: "Geschäftsführung",
+    c_action_k: "Vertretungsregel"
   }
 };
 
-/* ======= Company registry values (stable, same for all langs) =======
-   Source: Extract (Obchodní rejstřík) 18. prosince 2025 :contentReference[oaicite:1]{index=1}
-===================================================================== */
+/* ======= Company registry values (stable) ======= */
 const COMPANY_VALUES = {
   c_name_v: "Vector Dynamics s.r.o.",
   c_address_v: "K cihelně 294, Satalice, 190 15 Praha 9",
@@ -302,7 +401,6 @@ const COMPANY_VALUES = {
   c_capital_v: "20 000,- Kč",
   c_directors_v: "2 jednatelé",
   c_action_v: "Každý jednatel zastupuje společnost samostatně",
-
   companyActivities: [
     "Výroba kovových konstrukcí a kovodělných výrobků",
     "Umělecko-řemeslné zpracování kovů",
@@ -334,12 +432,6 @@ function safeList(id, arr) {
   el.innerHTML = arr.map(i => `<li>${i}</li>`).join("");
 }
 
-function safeHTML(id, html) {
-  const el = document.getElementById(id);
-  if (!el || html === undefined || html === null) return;
-  el.innerHTML = html;
-}
-
 function getLang() {
   return localStorage.getItem("lang") || "ru";
 }
@@ -348,12 +440,19 @@ function getLang() {
 function setLang(lang) {
   const d = content[lang] || content.ru;
 
-  /* NAV / BUTTONS */
+  // NAV
   safe("companyTopBtn", d.companyTopBtn);
   safe("companyLinkFooter", d.companyLinkFooter);
+  safe("portfolioTopBtn", d.portfolioTopBtn);
   safe("backToSite", d.backToSite);
 
-  /* CONTACT LABELS (company page + footer) */
+  // PORTFOLIO PAGE
+  safe("portfolioTitle", d.portfolioTitle);
+  safe("portfolioSub", d.portfolioSub);
+  safe("tabSolar", d.tabSolar);
+  safe("tabFiber", d.tabFiber);
+
+  // CONTACT LABELS
   safe("companyContactsTitle", d.companyContactsTitle);
 
   safe("contactEmailLabel", d.contactEmailLabel);
@@ -366,7 +465,7 @@ function setLang(lang) {
   safe("contactTelDeLabelFooter1", d.contactTelDeLabelFooter);
   safe("contactTelDeLabelFooter2", d.contactTelDeLabelFooter);
 
-  /* MAIN SITE TEXTS */
+  // MAIN SITE
   safe("heroTitle", d.heroTitle);
   safe("heroText", d.heroText);
 
@@ -389,10 +488,9 @@ function setLang(lang) {
   safe("fiberText", d.fiberText);
   safeList("fiberList", d.fiberList);
 
-  /* COMPANY PAGE TEXTS */
+  // COMPANY PAGE TEXTS
   safe("companyPageTitle", d.companyPageTitle);
   safe("companyPageSub", d.companyPageSub);
-
   safe("companyBlock1", d.companyBlock1);
   safe("companyBlock2", d.companyBlock2);
   safe("companyBlock3", d.companyBlock3);
@@ -410,7 +508,7 @@ function setLang(lang) {
   safe("c_directors_k", d.c_directors_k);
   safe("c_action_k", d.c_action_k);
 
-  /* COMPANY VALUES (same for all langs) */
+  // COMPANY VALUES
   Object.entries(COMPANY_VALUES).forEach(([key, val]) => {
     if (key === "companyActivities") return;
     safe(key, val);
@@ -419,13 +517,13 @@ function setLang(lang) {
 
   localStorage.setItem("lang", lang);
 
-  // after language change — ensure stagger elements animate
+  // re-stagger after language change
   requestAnimationFrame(() => {
     document.querySelectorAll(".stagger").forEach(el => el.classList.add("show"));
   });
 }
 
-/* ================= REVEAL ANIMATIONS ================= */
+/* ================= REVEAL ================= */
 function initReveal() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) {
@@ -451,6 +549,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
 });
 
-// Make global for inline onclick buttons
 window.setLang = setLang;
 
